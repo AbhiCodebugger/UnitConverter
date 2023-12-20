@@ -70,17 +70,16 @@ fun UnitConverter(){
     val oConversionFactor = remember { mutableStateOf(1.0) }
 
     val kTextStyleLarge = androidx.compose.ui.text.TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = FontFamily.Monospace,
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
-
-        color = Color.Blue
+        color = Color.Red
     )
     val kTextStyleMedium = androidx.compose.ui.text.TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = FontFamily.Monospace,
         fontSize = 24.sp,
         fontWeight = FontWeight.Medium,
-        color = Color.Blue
+        color = Color.Black
 
     )
 
@@ -97,6 +96,8 @@ fun UnitConverter(){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ){
+        Text("Welcome", style = kTextStyleLarge)
+        Text("To", style = kTextStyleLarge)
         Text("Unit Converter", style = kTextStyleLarge)
         Spacer(modifier= Modifier.height(16.dp))
         OutlinedTextField(value = inputValue, onValueChange = {
@@ -174,6 +175,7 @@ fun UnitConverter(){
                 }
             }
         }
+        Spacer(modifier = Modifier.height(16.dp))
         Text("Result : $outputValue $outputUnit", style = kTextStyleMedium )
     }
 }
